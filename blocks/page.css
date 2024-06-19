@@ -18,7 +18,7 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 975px) and (min-width: 730px) {
+@media screen and (max-width: 935px) and (min-width: 780px) {
   .page__section {
     margin: 0 20px 0 20px;
     max-width: calc(100% - 80px);
@@ -26,10 +26,10 @@
   }
 }
 
-@media screen and (min-width: 410px) and (max-width: 630px) {
+@media screen and (min-width: 460px) and (max-width: 630px) {
   .page__section {
     max-width: calc(100% - 40px);
-    padding: 0;
-    margin: 40px 40px 0;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }

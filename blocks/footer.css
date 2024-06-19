@@ -12,7 +12,7 @@
   line-height: 22px;
 }
 
-@media screen and (max-width: 975px) and (min-width: 730px) {
+@media screen and (max-width: 935px) and (min-width: 780px) {
   .footer {
     font-size: 16px;
     margin-left: 19px;
@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (max-width: 630px) and (min-width: 410px) {
+@media screen and (max-width: 630px) and (min-width: 460px) {
   .footer {
     font-size: 14px;
     margin: 48px 0 36px;

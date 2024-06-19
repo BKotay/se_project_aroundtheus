@@ -2,7 +2,6 @@
   margin-top: 45px;
   margin-left: 200px;
   height: 74px;
-  border: 1px;
   align-content: center;
   border-bottom: 1px solid rgba(84, 84, 84, 1);
 }
@@ -17,10 +16,11 @@
   opacity: 70%;
 }
 
-@media screen and (min-width: 410px) and (max-width: 630px) {
+@media screen and (min-width: 460px) and (max-width: 630px) {
   .header {
-    padding: 0;
+    padding: 28px;
     margin: 0 auto;
+    height: 56px;
   }
 
   .header__image {
@@ -30,7 +30,7 @@
   }
 }
 
-@media screen and (min-width: 730px) and (max-width: 975px) {
+@media screen and (min-width: 780px) and (max-width: 935px) {
   .header {
     padding: 0;
     margin: 0 auto;

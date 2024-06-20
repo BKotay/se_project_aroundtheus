@@ -1,67 +1,69 @@
-.cards {
-  margin-top: 30px;
-}
 
-.card__list {
-  display: grid;
-  list-style-type: none;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, 282px);
-  grid-gap: 20px 17px;
-  padding: 0;
-  margin: 0;
-}
+  .cards {
+    margin-top: 30px;
+  }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-}
+  .card__list {
+    display: grid;
+    list-style-type: none;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 282px);
+    grid-gap: 20px 17px;
+    padding: 0;
+    margin: 0;
+  }
 
-.card__image {
-  max-width: 282px;
-  height: 282px;
-}
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
 
-.card__description {
-  display: flex;
-  background: white;
-  color: black;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
-  font-weight: 900;
-  line-height: 29px;
-}
+  .card__image {
+    max-width: 282px;
+    height: 282px;
+  }
 
-.card__like-button {
-  background: transparent url(../images/like-inactive.svg) center no-repeat;
-  width: 21px;
-  height: 18px;
-  border: none;
-}
+  .card__description {
+    display: flex;
+    background: white;
+    color: black;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-weight: 900;
+    line-height: 29px;
+  }
 
-.card__like-button:hover {
-  cursor: pointer;
-  opacity: 60%;
-}
+  .card__like-button {
+    background: transparent url(../images/like-inactive.svg) center no-repeat;
+    width: 21px;
+    height: 18px;
+    border: none;
+  }
 
-.card__title {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 0;
-  max-width: 220px;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 29px;
-}
+  .card__like-button:hover {
+    cursor: pointer;
+    opacity: 60%;
+  }
 
-@media screen and (max-width: 630px) and (min-width: 460px) {
+  .card__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    max-width: 220px;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+  }
+
+
+@media screen and (max-width: 630px) {
   .cards {
     margin-top: 30px;
     margin-left: 0;
@@ -69,7 +71,7 @@
   }
 }
 
-@media screen and (max-width: 780px) and (min-width: 935px) {
+@media screen and (min-width: 935px) {
   cards {
     padding: 0;
     margin-top: 36px;

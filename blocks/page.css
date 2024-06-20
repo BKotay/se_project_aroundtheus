@@ -18,18 +18,15 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 935px) and (min-width: 780px) {
+@media screen and (max-width: 935px) {
   .page__section {
-    margin: 0 20px 0 20px;
-    max-width: calc(100% - 80px);
     padding: 0;
   }
 }
 
-@media screen and (min-width: 460px) and (max-width: 630px) {
+@media screen and (max-width: 630px) {
   .page__section {
-    max-width: calc(100% - 40px);
-    margin-left: 0px;
-    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }

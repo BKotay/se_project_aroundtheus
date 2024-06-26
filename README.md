@@ -1,21 +1,15 @@
 # Project 3: Around The U.S.
 
-### Overview  
+### Overview
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+This is Project Three: Around The U.S.
+
+A Interactive project which allows users to create and add their own profile and pictures to while giving different titles and descriptions to the users liking. This project is made so all the elements are displayed correctly on popular screen sizes.
+
+Through this project, the experience gained through this was to set different dimensions and resolutions on different size devices through media queries starting from a min-width: 320px. It also applies font files, deals with text overflow, exporting and collecting images/css information from Figma. The grid layout used to properly set different sections to correctly layout the platform.
+
+The video for this project is in the link below.
+
+## Project: Around The U.S. Review Video
+
+https://drive.google.com/file/d/1NOqT42mSqdB295gO44PqaYF-U30gaq8c/view?usp=sharing

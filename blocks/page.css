@@ -23,10 +23,3 @@
     padding: 0;
   }
 }
-
-@media screen and (max-width: 630px) {
-  .page__section {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-}

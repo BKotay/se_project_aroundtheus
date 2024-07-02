@@ -14,6 +14,6 @@ The video for this project is in the link below.
 
 https://drive.google.com/file/d/1NOqT42mSqdB295gO44PqaYF-U30gaq8c/view?usp=sharing
 
-## Link to README.md
+## Github Pages Link
 
-https://github.com/BKotay/se_project_aroundtheus/blob/main/README.md
+https://BKotay.github.io/se_project_aroundtheus

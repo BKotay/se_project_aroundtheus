@@ -18,7 +18,7 @@
   padding-right: 20px;
   align-items: center;
   justify-content: space-between;
-  border-bottom-style: 10px;
+  border-radius: 10px;
   font-weight: 900;
   line-height: 29px;
 }

@@ -18,7 +18,7 @@
   padding-right: 20px;
   align-items: center;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
   font-weight: 900;
   line-height: 29px;
 }

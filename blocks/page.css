@@ -18,8 +18,15 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 935px) {
+@media screen and (max-width: 913px) {
   .page__section {
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 621px) {
+  .page__content {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

@@ -11,7 +11,7 @@
   display: grid;
   grid-template-areas:
     "title button"
-    "description description";
+    "description auto";
   grid-template-columns: minmax(auto, 373px) auto;
   align-items: center;
 }
@@ -34,9 +34,11 @@
   background: transparent url(../images/add-icon.svg) center no-repeat;
   height: 50px;
   width: 150px;
+  grid-area: button;
   margin-left: auto;
   border: 2px solid #fff;
   border-radius: 2px;
+  padding: 0;
 }
 
 .profile__add-button:hover {
@@ -75,26 +77,23 @@
   margin-right: 24px;
 }
 
-@media screen and (max-width: 935px) {
+@media screen and (max-width: 913px) {
   .profile {
     margin-left: 0px;
   }
 
   .profile__title {
     row-gap: 10px;
-    display: flex;
     justify-content: center;
     font-size: 26px;
   }
 
   .profile__info {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 10px;
+    grid-template-columns: minmax(auto, 230px) auto;
   }
 
   .profile__description {
-    width: 100%;
+    max-width: 111px;
     font-size: 14px;
     margin-top: 5px;
   }
@@ -107,18 +106,17 @@
     height: 18px;
     width: 18px;
     margin-top: 6px;
-    padding-left: 0px;
-    margin-left: 10px;
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 621px) {
   .profile {
     flex-direction: column;
     margin-right: 0;
     font-size: 22px;
     line-height: 27px;
     width: auto;
+    padding: 0 20px;
   }
 
   .profile__image {
@@ -135,10 +133,12 @@
   .profile__info {
     justify-content: center;
     width: 100%;
+    grid-template-columns: minmax(auto, 194px) auto;
   }
 
   .profile__description {
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     line-height: 17px;
   }
 

@@ -28,6 +28,7 @@
 .profile__edit-button:hover {
   cursor: pointer;
   opacity: 60%;
+  transform: scale(1.05);
 }
 
 .profile__add-button {
@@ -44,6 +45,7 @@
 .profile__add-button:hover {
   cursor: pointer;
   opacity: 60%;
+  transform: scale(1.05);
 }
 
 .profile__title {

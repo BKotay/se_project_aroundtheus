@@ -32,9 +32,9 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditCloseButton = profileEditModal.querySelector(".modal__close");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
-const profileTitleInput = document.querySelector(".profile-title-input");
+const profileTitleInput = document.querySelector(".modal__input_type_name");
 const profileDescriptionInput = document.querySelector(
-  ".profile-description-input"
+  ".modal__input_type_description"
 );
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 

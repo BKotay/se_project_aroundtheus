@@ -86,6 +86,71 @@
   opacity: 0.9;
 }
 
+/* IMAGE MODAL */
+#image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* always flex for smooth transitions */
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease; /* Smooth fade in/out */
+  z-index: 100;
+}
+
+#image-modal.modal_opened {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-modal__container {
+  position: relative;
+  padding: 10px;
+  margin: auto;
+  border-radius: 10px;
+  max-width: 75vw;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#image-modal .modal__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image-modal .modal__image {
+  width: 50vw;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#image-modal .modal__description {
+  color: white;
+}
+
+/* Close button for image modal */
+#image-modal .modal__close {
+  position: absolute;
+  top: -36px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background: url(../images/close_icon.svg) center/contain no-repeat;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
 @media screen and (max-width: 620px) {
   .modal {
     justify-content: center;

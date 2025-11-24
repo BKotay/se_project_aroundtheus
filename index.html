@@ -16,6 +16,7 @@
           class="header__image"
         />
       </header>
+
       <main class="content">
         <section class="profile">
           <img
@@ -30,15 +31,18 @@
           </div>
           <button class="profile__add-button" type="button"></button>
         </section>
+
         <section class="cards page__section">
           <ul class="cards__list"></ul>
         </section>
       </main>
+
       <footer class="footer page__section">
         <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
       </footer>
     </div>
 
+    <!-- Edit Profile Modal -->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button class="modal__close" type="button"></button>
@@ -48,23 +52,61 @@
             class="modal__input modal__input_type_name"
             type="text"
             name="title"
+            required
           />
           <input
             class="modal__input modal__input_type_description"
             type="text"
             name="description"
+            required
           />
           <button class="modal__button">Save</button>
         </form>
       </div>
     </div>
 
+    <!-- Add Card Modal -->
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button class="modal__close" type="button"></button>
+        <h3 class="modal__heading">New Place</h3>
+        <form class="modal__form" id="add-card-form">
+          <input
+            class="modal__input modal__input_type_title"
+            type="text"
+            name="name"
+            placeholder="Title"
+            required
+          />
+          <input
+            class="modal__input modal__input_type_link"
+            type="url"
+            name="link"
+            placeholder="Image URL"
+            required
+          />
+          <button class="modal__button">Create</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal" id="image-modal">
+      <div class="image-modal__container">
+        <button class="modal__close"></button>
+        <img src="" alt="" class="modal__image" />
+        <p class="modal__description"></p>
+      </div>
+    </div>
+
+    <!-- Card Template -->
     <template id="card-template">
       <li class="card">
         <img src="" alt="" class="card__image" />
         <div class="card__description">
           <h2 class="card__title"></h2>
           <button class="card__like-button" type="button"></button>
+          <button class="card__delete-button" type="button"></button>
         </div>
       </li>
     </template>

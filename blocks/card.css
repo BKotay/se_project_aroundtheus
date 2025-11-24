@@ -38,7 +38,6 @@
   line-height: 29px;
 }
 
-/* ❤️ LIKE BUTTON */
 .card__like-button {
   background: transparent url(../images/like-inactive.svg) center no-repeat;
   width: 21px;
@@ -56,7 +55,6 @@
   transform: scale(1.05);
 }
 
-/* 🗑️ DELETE / TRASH BUTTON */
 .card__delete-button {
   position: absolute;
   top: 10px;

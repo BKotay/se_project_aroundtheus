@@ -53,26 +53,18 @@ const cardTemplate = document
   .content.querySelector(".card");
 
 // Image Modal
-const imageModal = document.createElement("div");
-imageModal.id = "image-modal";
-imageModal.innerHTML = `
-  <div class="image-modal__container">
-    <button class="modal__close"></button>
-    <img src="" alt="" class="modal__image" />
-    <p class="modal__description"></p>
-  </div>
-`;
-document.body.appendChild(imageModal);
+const imageModal = document.querySelector("#image-modal");
 const modalCloseButton = imageModal.querySelector(".modal__close");
 const modalImage = imageModal.querySelector(".modal__image");
 const modalDescription = imageModal.querySelector(".modal__description");
 
-/* --- Popup Functions --- */
+/* --- Modal Popup Functions with smooth transitions --- */
 function openPopup(modal) {
   modal.classList.add("modal_opened");
 }
 
 function closePopup(modal) {
+  // Remove class after transition to allow smooth fade out
   modal.classList.remove("modal_opened");
 }
 
@@ -89,7 +81,7 @@ function getCardElement(cardData) {
   cardImageEl.alt = cardData.name;
   cardTitleEl.textContent = cardData.name;
 
-  // Like toggle
+  // Like button
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });

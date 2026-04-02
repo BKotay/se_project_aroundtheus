@@ -15,10 +15,8 @@ export default class Card {
     return cardElement;
   }
 
-  _handleLike() {
-    this._card
-      .querySelector(".card__like-button")
-      .classList.toggle("card__like-button_active");
+  _handleLike(evt) {
+    evt.target.classList.toggle("card__like-button_active");
   }
 
   _handleDelete() {
@@ -30,8 +28,8 @@ export default class Card {
     const deleteButton = this._card.querySelector(".card__delete-button");
     const cardImage = this._card.querySelector(".card__image");
 
-    likeButton.addEventListener("click", () => {
-      this._handleLike();
+    likeButton.addEventListener("click", (evt) => {
+      this._handleLike(evt);
     });
 
     deleteButton.addEventListener("click", () => {

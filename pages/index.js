@@ -62,11 +62,15 @@ function handleImageClick(card) {
   openPopup(imageModal);
 }
 
-// ---------- Render Initial Cards ----------
-initialCards.forEach((item) => {
+const renderCard = (item) => {
   const cardInstance = new Card(item, "#card-template", handleImageClick);
   const cardElement = cardInstance.generateCard();
   cardListEl.prepend(cardElement);
+};
+
+// ---------- Render Initial Cards ----------
+initialCards.forEach((item) => {
+  renderCard(item);
 });
 
 // ---------- Enable Form Validation ----------
@@ -128,13 +132,16 @@ closeButtons.forEach((button) => {
 profileEditButton.addEventListener("click", () => {
   profileNameInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+
+  const profileFormValidator = formValidators.get(profileForm);
+  if (profileFormValidator) {
+    profileFormValidator.resetValidation();
+  }
+
   openPopup(profileModal);
 });
 
 addCardButton.addEventListener("click", () => {
-  cardForm.reset();
-  const cardFormValidator = formValidators.get(cardForm);
-  if (cardFormValidator) cardFormValidator.disableButton();
   openPopup(addCardModal);
 });
 
@@ -143,11 +150,6 @@ profileForm.addEventListener("submit", (evt) => {
 
   profileTitle.textContent = profileNameInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-
-  const profileFormValidator = formValidators.get(profileForm);
-  if (profileFormValidator) {
-    profileFormValidator.disableButton();
-  }
 
   closePopup(profileModal);
 });
@@ -160,13 +162,7 @@ cardForm.addEventListener("submit", (evt) => {
     link: cardLinkInput.value,
   };
 
-  const cardInstance = new Card(
-    newCardData,
-    "#card-template",
-    handleImageClick,
-  );
-  const cardElement = cardInstance.generateCard();
-  cardListEl.prepend(cardElement);
+  renderCard(newCardData);
 
   cardForm.reset();
 

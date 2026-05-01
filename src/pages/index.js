@@ -1,5 +1,10 @@
+import "./index.css";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
 
 const validationConfig = {
   formSelector: ".modal__form",
@@ -39,39 +44,48 @@ const initialCards = [
 
 const cardListEl = document.querySelector(".cards__list");
 
-const modalImage = document.querySelector(".modal__image");
-const modalDescription = document.querySelector(".modal__description");
-const imageModal = document.querySelector("#image-modal");
+// popup instances will handle opening/closing and image population
+const popupImage = new PopupWithImage("#image-modal");
+const popupProfile = new PopupWithForm("#profile-edit-modal", (data) => {
+  userInfo.setUserInfo({ title: data.title, description: data.description });
+  popupProfile.close();
+});
 
-// ---------- Modal Functions ----------
-function openPopup(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", handleEscKey);
-}
+const popupAddCard = new PopupWithForm("#add-card-modal", (data) => {
+  const newCardData = { name: data.name, link: data.link };
+  const newCardElement = renderCard(newCardData);
+  cardSection.addItem(newCardElement);
+  cardForm.reset();
+  const cardFormValidator = formValidators.get(cardForm);
+  if (cardFormValidator) cardFormValidator.resetValidation();
+  popupAddCard.close();
+});
 
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleEscKey);
-}
+const userInfo = new UserInfo({
+  nameSelector: ".profile__title",
+  jobSelector: ".profile__description",
+});
 
-// ---------- Image Click Handler ----------
 function handleImageClick(card) {
-  modalImage.src = card.getLink();
-  modalImage.alt = card.getName();
-  modalDescription.textContent = card.getName();
-  openPopup(imageModal);
+  popupImage.open(card);
 }
 
 const renderCard = (item) => {
   const cardInstance = new Card(item, "#card-template", handleImageClick);
   const cardElement = cardInstance.generateCard();
-  cardListEl.prepend(cardElement);
+  return cardElement;
 };
 
+const cardSection = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => renderCard(item),
+  },
+  ".cards__list",
+);
+
 // ---------- Render Initial Cards ----------
-initialCards.forEach((item) => {
-  renderCard(item);
-});
+cardSection.renderItems();
 
 // ---------- Enable Form Validation ----------
 const formValidators = new Map();
@@ -101,75 +115,22 @@ const cardLinkInput = cardForm.querySelector(".modal__input_type_link");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 
-// duplicate openPopup/closePopup logic is in the top-level functions above
-function closeAllPopups() {
-  const openedPopup = document.querySelector(".modal_opened");
-  if (openedPopup) closePopup(openedPopup);
-}
-
-function handleEscKey(evt) {
-  if (evt.key === "Escape") {
-    closeAllPopups();
-  }
-}
-
-// click on overlay to close modal
-const modals = document.querySelectorAll(".modal");
-modals.forEach((modal) => {
-  modal.addEventListener("mousedown", (evt) => {
-    if (evt.target === modal) closePopup(modal);
-  });
-});
-
-const closeButtons = document.querySelectorAll(".modal__close");
-closeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modalToClose = button.closest(".modal");
-    closePopup(modalToClose);
-  });
-});
+// wire popup event listeners
+popupImage.setEventListeners();
+popupProfile.setEventListeners();
+popupAddCard.setEventListeners();
 
 profileEditButton.addEventListener("click", () => {
-  profileNameInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
+  const currentUser = userInfo.getUserInfo();
+  profileNameInput.value = currentUser.title;
+  profileDescriptionInput.value = currentUser.description;
 
   const profileFormValidator = formValidators.get(profileForm);
-  if (profileFormValidator) {
-    profileFormValidator.resetValidation();
-  }
+  if (profileFormValidator) profileFormValidator.resetValidation();
 
-  openPopup(profileModal);
+  popupProfile.open();
 });
 
 addCardButton.addEventListener("click", () => {
-  openPopup(addCardModal);
-});
-
-profileForm.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-
-  profileTitle.textContent = profileNameInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-
-  closePopup(profileModal);
-});
-
-cardForm.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-
-  const newCardData = {
-    name: cardTitleInput.value,
-    link: cardLinkInput.value,
-  };
-
-  renderCard(newCardData);
-
-  cardForm.reset();
-
-  const cardFormValidator = formValidators.get(cardForm);
-  if (cardFormValidator) {
-    cardFormValidator.resetValidation();
-  }
-
-  closePopup(addCardModal);
+  popupAddCard.open();
 });

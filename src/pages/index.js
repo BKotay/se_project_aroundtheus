@@ -8,6 +8,7 @@ import PopupWithConfirmation from "../components/PopupWithConfirmation.js";
 import UserInfo from "../components/UserInfo.js";
 import Api from "../components/Api.js";
 
+// Review branch for submission
 const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",

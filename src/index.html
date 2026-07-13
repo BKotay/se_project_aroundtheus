@@ -19,14 +19,11 @@
 
       <main class="content">
         <section class="profile">
-          <div class="profile__image-container">
-            <img
-              src="./images/Avatar.png"
-              alt="Jacques Cousteau"
-              class="profile__image"
-            />
-            <button class="profile__avatar-edit-button" type="button"></button>
-          </div>
+          <img
+            src="./images/Avatar.png"
+            alt="Jacques Cousteau"
+            class="profile__image"
+          />
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button class="profile__edit-button" type="button"></button>
@@ -88,34 +85,6 @@
       </div>
     </div>
 
-    <!-- Edit Avatar Modal -->
-    <div class="modal" id="avatar-edit-modal">
-      <div class="modal__container">
-        <button class="modal__close" type="button"></button>
-        <h2 class="modal__heading">Change profile picture</h2>
-
-        <form class="modal__form" id="avatar-form" novalidate>
-          <input
-            id="avatar-link"
-            class="modal__input modal__input_type_link"
-            type="url"
-            name="link"
-            placeholder="Image URL"
-            required
-          />
-          <span class="modal__input-error" id="avatar-link-error"></span>
-
-          <button
-            class="modal__button modal__button_disabled"
-            type="submit"
-            disabled
-          >
-            Save
-          </button>
-        </form>
-      </div>
-    </div>
-
     <!-- Add Card Modal -->
     <div class="modal" id="add-card-modal">
       <div class="modal__container">
@@ -162,17 +131,6 @@
         <button class="modal__close"></button>
         <img src="" alt="" class="modal__image" />
         <p class="modal__description"></p>
-      </div>
-    </div>
-
-    <!-- Delete Card Confirmation Modal -->
-    <div class="modal" id="delete-card-modal">
-      <div class="modal__container modal__container_delete">
-        <button class="modal__close" type="button"></button>
-        <h2 class="modal__heading modal__heading_delete">Are you sure?</h2>
-        <button class="modal__button modal__button_delete" type="button">
-          Yes
-        </button>
       </div>
     </div>
 

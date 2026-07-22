@@ -6,6 +6,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 
+// Review branch for submission
 const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
